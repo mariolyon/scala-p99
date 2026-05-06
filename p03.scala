@@ -4,7 +4,7 @@
 import scala.annotation.tailrec
 
 @tailrec
-def elem(k: Int, list: List[Int]): Option[Int] = {
+def elem[A](k: Int, list: List[A]): Option[A] = {
   (k, list) match {
     case (n, Nil) => None
     case (0, x :: _) => Some(x)

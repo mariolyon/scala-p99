@@ -3,11 +3,11 @@
 
 import scala.annotation.tailrec
 
-def reverse(list: List[Int]): List[Int] =
+def reverse[A](list: List[A]): List[A] =
   reverseRec(list, Nil)
 
 @tailrec
-def reverseRec(list: List[Int], tail: List[Int]): List[Int] = {
+def reverseRec[A](list: List[A], tail: List[A]): List[A] = {
   (list, tail) match {
     case (Nil, tail) => tail
     case (x::Nil, tail) => x:: tail

@@ -4,7 +4,7 @@
 import scala.annotation.tailrec
 
 @tailrec
-def last(list: List[Int]): Option[Int] =
+def last[A](list: List[A]): Option[A] =
   list match
     case Nil          => None
     case x :: Nil     => Some(x)

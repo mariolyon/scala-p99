@@ -4,7 +4,7 @@
 import scala.annotation.tailrec
 
 @tailrec
-def penultimate(list: List[Int]): Option[Int] =
+def penultimate[A](list: List[A]): Option[A] =
   list match
     case Nil => None
     case x :: Nil => None
