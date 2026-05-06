@@ -4,3 +4,7 @@
 
 Solutions to 99 Scala Problems: https://aperiodic.net/pip/scala/s-99/
 
+each test can be run as follows:
+```sh
+scala-cli test pxx.scala
+```
