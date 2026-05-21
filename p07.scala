@@ -7,7 +7,7 @@ import scala.annotation.tailrec
 
 def flatten[A](list: List[Any]): List[Any] =
   list match {
-    case x :: xs if x.isInstanceOf[List[Any]] => flatten(x.asInstanceOf[List[Any]]) ++ flatten(xs)
+    case (x:List[Any]) :: xs => flatten(x) ++ flatten(xs)
     case x :: xs => x:: flatten(xs)
     case n => n
   }
