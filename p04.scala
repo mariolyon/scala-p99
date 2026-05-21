@@ -3,24 +3,22 @@
 
 import scala.annotation.tailrec
 
-def reverse[A](list: List[A]): List[A] =
-  reverseRec(list, Nil)
+def length[A](list: List[A]): Int = {
+  lengthRec(0, list)
+}
 
 @tailrec
-def reverseRec[A](list: List[A], tail: List[A]): List[A] = {
-  (list, tail) match {
-    case (Nil, tail) => tail
-    case (x::Nil, tail) => x:: tail
-    case (x::xs, tail) => reverseRec(xs, x:: tail)
+def lengthRec[A](acc: Int, list: List[A]): Int = {
+  list match {
+    case Nil => acc
+    case x:: Nil => acc + 1
+    case x:: xs => lengthRec(acc + 1, xs)
   }
 }
 
 class Tests extends munit.FunSuite:
-  test("given an empty list return None"):
-    assertEquals(reverse(Nil), Nil)
+  test("given an empty list return 0"):
+    assertEquals(length(Nil), 0)
 
-  test("given a list of one element return the same list"):
-    assertEquals(reverse(List(1)), List(1))
-
-  test("given a list of two than element return the reversed list"):
-    assertEquals(reverse(List(1, 2, 3)), List(3, 2, 1))
+  test("given list of elements return the length"):
+    assertEquals(length(List(1, 2, 3)), 3)
