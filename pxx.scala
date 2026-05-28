@@ -3,6 +3,7 @@
 
 //title: https://aperiodic.net/pip/scala/s-99/#pxx
 
+import language.deprecated.symbolLiterals
 import scala.annotation.tailrec
 
 def solve[A](list: List[Any]): List[Any] = ???
